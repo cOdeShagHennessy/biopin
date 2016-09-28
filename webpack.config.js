@@ -18,6 +18,7 @@ module: {
    { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/, query: {presets:['stage-2', 'react', 'es2015']}},
    { test: /\.css$/, loader: 'style-loader!css-loader' },
    { test: /\.less$/, loader: 'style-loader!css-loader!less-loader'}
+
  ]
 },
  plugins: [

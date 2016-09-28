@@ -12,15 +12,16 @@ export default class App extends Component {
 
     return (
       <div>
-
-        <div>
-        <SplitPane split="vertical" minSize={100} defaultSize={275}>
+        <SplitPane split="vertical" minSize={600} defaultSize={600} primary="second">
+            <div>
             <ul className="header">
               <li><IndexLink to="/" activeClassName='active'>Home__</IndexLink></li>
               <li><Link to="counter" activeClassName='active'>Counter</Link></li>
               <li><Link to="contact" activeClassName='active'>Contact</Link></li>
             </ul>
-              <SplitPane split="horizontal" minSize={100} defaultSize={200}>
+            </div>
+            <div>
+              <SplitPane split="horizontal" minSize={300} defaultSize={300} primary="second">
               <div>
                 {this.props.children}
               </div>
@@ -30,16 +31,17 @@ export default class App extends Component {
  showSettings={true} columns={["first name","last name", "appointment time", "svc code", "city", "state", "country"]}/>
               </div>
               </SplitPane>
+              </div>
         </SplitPane>
-        </div>
-
       </div>
     );
   }
 }
 App.propTypes = {
-    store: PropTypes.object,
     children: PropTypes.element.isRequired
+}
+App.contextTypes = {
+  store: React.PropTypes.object
 }
 var fakeData =  [
 {

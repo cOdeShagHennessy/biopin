@@ -1,5 +1,6 @@
 var app = require('electron').app;
 var BrowserWindow = require('electron').BrowserWindow;
+const autoUpdater = require('electron').autoUpdater; 
 // require('electron').CrashReporter.start();
 var mainWindow = null;
 
@@ -10,7 +11,7 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow({width: 900, height: 600});
   mainWindow.loadURL('file://' + __dirname + '/public/index.html');
   mainWindow.openDevTools();
   mainWindow.on('closed', function() {

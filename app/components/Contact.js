@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import Text from './text'
+import Text from './Text'
 
 export default class Contact extends Component {
   render() {

@@ -7,31 +7,50 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-desk": "./node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ./main.js",
     "watch-desk": "./node_modules/.bin/webpack-dev-server -d --colors",
-    "electron-rebuild": "./node_modules/.bin/electron-rebuild"
+    "watch:test": "ava --watch",
+    "ava": "ava"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit",
+    "files": [
+      "test/**/*.js",
+      "!**/not-this-file.js"
+    ],
+    "watch": false,
+    "verbose": true
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-preset-react": "^6.11.1",
     "electron-prebuilt": "^1.3.5",
+    "flash-notification-react-redux": "^1.0.5",
     "griddle-react": "^0.6.1",
     "react": "^15.3.1",
+    "react-addons-css-transition-group": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "react-router-redux": "^4.0.5",
     "redux": "^3.6.0",
+    "redux-notifications": "^2.1.1",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-2": "^6.13.0",
     "babel-register": "^6.14.0",
     "css-loader": "^0.25.0",
+    "devtron": "^1.3.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "redux-ava": "^2.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"

@@ -17,7 +17,6 @@ export default class CounterPage extends Component {
     );
   }
 }
-
 CounterPage.contextTypes = {
   store: React.PropTypes.object
 }

@@ -1,4 +1,3 @@
-
 require('../less/main.less');
 'use strict';
 import React, { Component, PropTypes } from "react";
@@ -8,6 +7,7 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+
 // import {addGroup, removeGroup, loadGroups, addTodo, completeTodo, setVisibilityFilter,VisibilityFilters} from './actions/actions'
 
 // import {countUp, countDown} from './actions/counterActions'
@@ -15,6 +15,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import {createStore, applyMiddleware, compose} from "redux";
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
+
 function createLogger({ getState }) {
   return (next) =>
     (action) => {
@@ -56,12 +57,13 @@ history.listen(location=>console.log("location = ", location.pathname));
 //     )};
 //   }
 
-
 const render = () => {
   ReactDOM.render(
     <div>
     <Provider store={store}>
+       <div>
        <Router history={history} routes={routes} />
+       </div>
     </Provider>
     </div>,
     document.getElementById("root"));
